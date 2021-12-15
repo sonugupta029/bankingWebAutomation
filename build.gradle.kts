@@ -17,7 +17,7 @@ repositories {
 
 object Version {
     val seleniumJava = "3.141.59"
-    val log4j = "2.15.0"
+    val log4j = "2.16.0"
     val testng = "6.14.3"
     val javaClient = "7.2.0"
     val extentReports = "3.0.7"
