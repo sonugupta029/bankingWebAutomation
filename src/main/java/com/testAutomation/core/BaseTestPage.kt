@@ -1,6 +1,6 @@
 package com.testAutomation.core
 
-import org.apache.log4j.Logger
+import java.util.logging.Logger
 import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.TimeoutException
@@ -22,19 +22,19 @@ open class BaseTestPage(private val webDriver: RemoteWebDriver) {
 
     fun isElementDisplayedAfterTimeout(objectLocator: By, timeoutInSeconds: Int): Boolean {
         val wait = WebDriverWait(webDriver, timeoutInSeconds.toLong())
-        try {
+        return try {
             wait.until {
                 ExpectedCondition { isElementDisplayed(objectLocator) }
             }
-            return true
+            true
         } catch (e: TimeoutException) {
-            logger.warn("isMobileElementDisplayedAfterTimeout - time out waiting for element to be displayed: [$objectLocator]")
-            return false
+            logger.warning("isMobileElementDisplayedAfterTimeout - time out waiting for element to be displayed: [$objectLocator]")
+            false
         }
 
     }
 
-    fun isElementDisplayed(objectLocator: By): Boolean {
+     fun isElementDisplayed(objectLocator: By): Boolean {
         val webElement: WebElement? = getWebElement(objectLocator)
         return webElement != null && webElement.isDisplayed
 
@@ -83,7 +83,7 @@ open class BaseTestPage(private val webDriver: RemoteWebDriver) {
         val element: WebElement? = getWebElement(objectToFind)
         var attribute: String? = null
         if (element != null) {
-            logger.trace("getElementAttribute - Found requested element: $objectToFind")
+            logger.info("getElementAttribute - Found requested element: $objectToFind")
             try {
                 attribute = element.getAttribute(attributeName)
             }catch (e: Exception){

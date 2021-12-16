@@ -17,7 +17,7 @@ repositories {
 
 object Version {
     val seleniumJava = "3.141.59"
-    val log4j = "2.15.0"
+    val log4j = "2.16.0"
     val testng = "6.14.3"
     val javaClient = "7.2.0"
     val extentReports = "3.0.7"
@@ -30,7 +30,7 @@ object Version {
 object Dependencies {
     val seleniumJava = "org.seleniumhq.selenium:selenium-java:${Version.seleniumJava}"
     val log4jApi = "org.apache.logging.log4j:log4j-api:${Version.log4j}"
-    val log4j1Api = "org.apache.logging.log4j:log4j-1.2-api:${Version.log4j}"
+    val log4j1Api = "org.apache.logging.log4j:log4j-core:${Version.log4j}"
     val testng = "org.testng:testng:${Version.testng}"
     val javaClient = "io.appium:java-client:${Version.javaClient}"
     val extentReports = "com.aventstack:extentreports:${Version.extentReports}"

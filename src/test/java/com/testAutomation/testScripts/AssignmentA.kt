@@ -7,7 +7,6 @@ import com.testAutomation.screens.AccountServicesScreen
 import com.testAutomation.screens.LoginScreen
 import com.testAutomation.utils.DataClass
 import com.testAutomation.utils.HtmlReporter
-import org.apache.log4j.Logger
 import org.testng.Assert
 import org.testng.annotations.Factory
 import org.testng.annotations.Test
@@ -30,7 +29,6 @@ class AssignmentA : BaseTestScript {
     lateinit var loginScreen: LoginScreen
     lateinit var extentTest: ExtentTest
     lateinit var accountServicesScreen: AccountServicesScreen
-    private val logger: Logger = Logger.getLogger("AssignmentA")
 
     @Factory(dataProvider = "DP")
     constructor (testData: DataClass) : this() {

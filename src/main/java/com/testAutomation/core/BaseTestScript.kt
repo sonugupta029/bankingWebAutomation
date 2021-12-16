@@ -4,7 +4,7 @@ import com.opencsv.CSVReader
 import com.testAutomation.utils.DataClass
 import com.testAutomation.utils.HtmlReporter
 import com.testAutomation.utils.ProjectConstants
-import org.apache.log4j.Logger
+import java.util.logging.Logger
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.RemoteWebDriver
@@ -53,7 +53,7 @@ open class BaseTestScript {
 
     @DataProvider(name="DP")
     fun testDataProvider():Array<Array<DataClass>>? {
-        logger.debug("In testDataProvider")
+        logger.info("In testDataProvider")
         val reader = CSVReader(FileReader("./src/test/resources/testData.csv"))
         val arrayList:List<Array<String>> = reader.readAll()
         val testData: Array<Array<DataClass>> = Array(arrayList.size-1) { Array(1) { DataClass("","") } }
